@@ -5,6 +5,7 @@ namespace App\Filament\Pages;
 use Filament\Auth\Pages\EditProfile;
 use Filament\Forms\Components\FileUpload;
 use Filament\Pages\Page;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Schema;
 
 class Profile extends EditProfile
@@ -27,6 +28,14 @@ class Profile extends EditProfile
                 $this->getPasswordFormComponent(),
                 $this->getPasswordConfirmationFormComponent(),
                 $this->getCurrentPasswordFormComponent(),
+            ]);
+    }
+    protected function getPasswordFormComponent(): Component
+    {
+        return parent::getPasswordFormComponent()
+            ->rules([
+                'required',
+                'min: 1'
             ]);
     }
 }
