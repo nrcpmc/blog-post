@@ -13,6 +13,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Kirschbaum\Commentions\Filament\Actions\CommentsAction;
 use Kirschbaum\Commentions\Filament\Actions\CommentsTableAction;
+use Kirschbaum\Commentions\Filament\Actions\SubscriptionTableAction;
 
 class PostsTable
 {
@@ -50,9 +51,7 @@ class PostsTable
                 ViewAction::make(),
                 EditAction::make(),
                 CommentsAction::make()
-                    ->mentionables(User::all())
-
-
+                    ->mentionables(User::all()),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

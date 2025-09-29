@@ -26,6 +26,8 @@ class AppPanelProvider extends PanelProvider
     {
         return $panel
             ->id('app')
+            ->topNavigation()
+            ->sidebarCollapsibleOnDesktop()
             ->path('app')
             ->login()
             ->colors([
