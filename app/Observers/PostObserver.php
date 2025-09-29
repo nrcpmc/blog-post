@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Post;
+use App\Notifications\PostNotification;
 use Filament\Actions\Action;
 use Filament\Notifications\Notification;
 
@@ -31,6 +32,11 @@ class PostObserver
                     ->markAsRead(),
             ])
             ->sendToDatabase($post->getSubscribers());
+
+
+        foreach ($post->getSubscribers() as $user) {
+            $user->notify(new PostNotification($post));
+        }
     }
 
     /**
