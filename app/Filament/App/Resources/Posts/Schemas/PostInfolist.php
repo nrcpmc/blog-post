@@ -25,6 +25,8 @@ class PostInfolist
                 TextEntry::make('updated_at')
                     ->dateTime()
                     ->placeholder('-'),
+                CommentsEntry::make('comments'),
+
             ]);
     }
 }

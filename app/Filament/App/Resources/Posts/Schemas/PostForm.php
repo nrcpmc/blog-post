@@ -20,9 +20,16 @@ class PostForm
                     ->columnSpanFull(),
                 Toggle::make('is_published')
                     ->required(),
-                TextInput::make('user_id')
-                    ->required()
-                    ->numeric(),
+                // TextInput::make('user_id')
+                //     ->hidden()
+                //     ->numeric()
+                //     ->default(auth()->id),
+
+                //Option 1:
+                // TextInput::make('user_id')
+                //     ->hidden()
+                //     ->numeric()
+                //     ->default(auth()->id),
             ]);
     }
 }
