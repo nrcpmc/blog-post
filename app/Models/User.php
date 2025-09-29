@@ -28,7 +28,7 @@ class User extends Authenticatable implements
     Commenter
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasComments;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
